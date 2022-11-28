@@ -1,0 +1,12 @@
+C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\FASM_MayCry\bin\Debug\FASM_MayCry.dll
+C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\FASM_MayCry\bin\Debug\FASM_MayCry.pdb
+C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\FASM_MayCry\bin\Debug\Fasm.NET.dll
+C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\FASM_MayCry\bin\Debug\Process.NET.dll
+C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\FASM_MayCry\bin\Debug\Fasm.NET.xml
+C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\FASM_MayCry\bin\Debug\Process.NET.pdb
+C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\FASM_MayCry\bin\Debug\Process.NET.xml
+C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\FASM_MayCry\obj\Debug\FASM_MayCry.csproj.AssemblyReference.cache
+C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\FASM_MayCry\obj\Debug\FASM_MayCry.csproj.CoreCompileInputs.cache
+C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\FASM_MayCry\obj\Debug\FASM_MayCry.csproj.CopyComplete
+C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\FASM_MayCry\obj\Debug\FASM_MayCry.dll
+C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\FASM_MayCry\obj\Debug\FASM_MayCry.pdb

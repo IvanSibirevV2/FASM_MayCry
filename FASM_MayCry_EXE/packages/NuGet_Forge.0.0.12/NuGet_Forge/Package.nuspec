@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package >
+  <metadata>
+    <id>FASM_MayCry</id>
+    <version>0.0.1</version>
+    <authors>SibirevIvanV2</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectUrl>https://github.com/IvanSibirevV2/FASM_MayCry</projectUrl>
+    <repository type="git" url="https://github.com/IvanSibirevV2/FASM_MayCry" />
+    <icon>NLO.png</icon>
+    <description>Easy Extension Fasm.net Process.net + ExampleS
+C# .Net Framework 4.6.1</description>
+    <releaseNotes>
+[System.Security.SuppressUnmanagedCodeSecurityAttribute] // disable security checks for better performance
+[System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute(System.Runtime.InteropServices.CallingConvention.Cdecl)] // cdecl - let caller (.NET CLR) clean the stack
+delegate IntPtr AssemblyReadRegistersFunction();
+
+IntPtr returnValue=new IntPtr();
+@"use32
+mov eax, [ebp+4]
+ret
+".Get_FasmNet_Assemble().Get_Memory()
+.Set_ExecuteDelegate[AssemblyReadRegistersFunction](_Delegate => {returnValue = _Delegate(); })
+.Dispose();
+;
+</releaseNotes>
+    <tags>C# .Net ExampleS Fasm.net Process.net SibirevIvanV2</tags>
+    <dependencies>
+      <group targetFramework=".NETStandard4.6">
+        <dependency id="Fasm.NET" version="1.70.3.2" exclude="Build,Analyzers" />
+        <dependency id="Process.NET" version="1.0.8" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src=".\FASM_MayCry.dll" target="lib\net461" />
+ <file src=".\FASM_MayCry.pdb" target="lib\net461" />
+    <file src=".\NLO.png" target="" />
+  </files>
+</package>
