@@ -55,8 +55,14 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Fasm.NET, Version=1.0.4939.27955, Culture=neutral, processorArchitecture=x86">
+      <HintPath>..\packages\FASM_MayCry.0.0.2\lib\net461\Fasm.NET.dll</HintPath>
+    </Reference>
     <Reference Include="FASM_MayCry, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FASM_MayCry.0.0.1\lib\net461\FASM_MayCry.dll</HintPath>
+      <HintPath>..\packages\FASM_MayCry.0.0.2\lib\net461\FASM_MayCry.dll</HintPath>
+    </Reference>
+    <Reference Include="Process.NET, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FASM_MayCry.0.0.2\lib\net461\Process.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
