@@ -1,13 +1,13 @@
 C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
 C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\ConsoleApp1\bin\Debug\ConsoleApp1.exe
 C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
-C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.AssemblyReference.cache
-C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
-C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\ConsoleApp1\obj\Debug\ConsoleApp1.exe
-C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
 C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\ConsoleApp1\bin\Debug\Fasm.NET.dll
 C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\ConsoleApp1\bin\Debug\Process.NET.dll
 C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\ConsoleApp1\bin\Debug\Fasm.NET.xml
 C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\ConsoleApp1\bin\Debug\Process.NET.pdb
 C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\ConsoleApp1\bin\Debug\Process.NET.xml
+C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
 C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CopyComplete
+C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\D\Git_Hub\FASM_MayCry\FASM_MayCry_EXE\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.AssemblyReference.cache

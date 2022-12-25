@@ -125,11 +125,105 @@ namespace ConsoleApp1
 
     public class Program
     {
-        static void Main(string[] args)
+        [System.Security.SuppressUnmanagedCodeSecurityAttribute]
+        [System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute(System.Runtime.InteropServices.CallingConvention.Cdecl)]
+        public delegate int delegate_a_Del_b_ASM(int _A, int _B);
+
+
+        /// <summary>Целая часть от деления</summary>
+        public static int A598437583(int _A, int _B) {return (int)_A/_B;}
+        /// <summary>Целая часть от деления</summary>
+        public static int A598437583_ASM(int _A, int _B)
         {
+            int RESALT = 0;
+            
+            FasmNet _FasmNet = new FasmNet();
+            _FasmNet.AddLine("use32");
+            _FasmNet.AddLine("xor eax, eax");
+            _FasmNet.AddLine("mov eax, dword [ebp+8]");
+            _FasmNet.AddLine("cdq");//Деление со знаком
+            _FasmNet.AddLine("idiv dword [ebp+12]");//Деление со знаком//Целая часть от деления к EAX
+            _FasmNet.AddLine("ret");
+            System.Byte[] _ByteS = _FasmNet.Assemble();
+
+            Process.NET.Memory.IAllocatedMemory _IAllocatedMemory =
+                new ProcessSharp(System.Diagnostics.Process.GetCurrentProcess(), Process.NET.Memory.MemoryType.Local)
+            .MemoryFactory.Allocate(name: "SamName2",size: _ByteS.Length,protection: MemoryProtectionFlags.ExecuteReadWrite);
+            _IAllocatedMemory.Write(0, _ByteS);
+
+            delegate_a_Del_b_ASM _delSumm_For_Assembly = Marshal.GetDelegateForFunctionPointer<delegate_a_Del_b_ASM>(_IAllocatedMemory.BaseAddress);
+
+            RESALT = _delSumm_For_Assembly(_A,_B);
+
+            _IAllocatedMemory.Dispose();
+            return RESALT;
+        }
+        /// <summary>Остаток от деления</summary>
+        public static int A6е4387562(int _A, int _B)
+        {return _A % _B;}
+        /// <summary>Остаток от деления</summary>
+        public static int A6е4387562_ASM(int _A, int _B)
+        {
+            int RESALT = 0;
+
+            FasmNet _FasmNet = new FasmNet();
+            _FasmNet.AddLine("use32");
+            _FasmNet.AddLine("xor eax, eax");
+            _FasmNet.AddLine("mov eax, dword [ebp+8]");
+            _FasmNet.AddLine("cdq");//Деление со знаком
+            _FasmNet.AddLine("idiv dword [ebp+12]");//Деление со знаком
+            _FasmNet.AddLine("mov eax, edx");//Получение остатка от деления
+            _FasmNet.AddLine("ret");
+            System.Byte[] _ByteS = _FasmNet.Assemble();
+
+            Process.NET.Memory.IAllocatedMemory _IAllocatedMemory =
+                new ProcessSharp(System.Diagnostics.Process.GetCurrentProcess(), Process.NET.Memory.MemoryType.Local)
+            .MemoryFactory.Allocate(name: "SamName2", size: _ByteS.Length, protection: MemoryProtectionFlags.ExecuteReadWrite);
+            _IAllocatedMemory.Write(0, _ByteS);
+
+            delegate_a_Del_b_ASM _delSumm_For_Assembly = Marshal.GetDelegateForFunctionPointer<delegate_a_Del_b_ASM>(_IAllocatedMemory.BaseAddress);
+
+            RESALT = _delSumm_For_Assembly(_A, _B);
+
+            _IAllocatedMemory.Dispose();
+            return RESALT;
+        }
+        /// <summary> Приличное деление чисел</summary>
+        public static System.Double A5643756387(int _A, int _B)
+        {return (_A / _B)+ (_A % _B)/ (System.Double)_B;}
+        public static System.Double A5643756387_ASM(int _A, int _B)
+        { return (A598437583_ASM(6, 4) + A6е4387562_ASM(6, 4) / (System.Double)_B); }
+
+        public static void Main(string[] args)
+        {
+            int a = 6;
+            int b = 4;
+            int c = a % b;
+            ;
+            System.Console.WriteLine(((System.Double)((System.Double)6 / (System.Double)4)));
+
+            
+            System.Console.WriteLine(6 / 4);
+            System.Console.WriteLine(A598437583(6, 4));
+            System.Console.WriteLine(A598437583_ASM(6, 4));
+            System.Console.WriteLine("////////////////////////////");
+            System.Console.WriteLine(6%4);
+            System.Console.WriteLine(A6е4387562(6, 4));
+            System.Console.WriteLine(A6е4387562_ASM(6, 4));
+            System.Console.WriteLine("////////////////////////////");
+            System.Console.WriteLine((double)6 / (double)4);
+            System.Console.WriteLine(A5643756387(6,4));
+            System.Console.WriteLine(A5643756387_ASM(6, 4));
+
+
+
+            
             Student _Student = new Student("Иван",5,4,2,5,4,2);
             _Student.WriteThis();
             System.Console.WriteLine(_Student.Summ());
+            //System.Console.WriteLine(_Student.fdiv_a_b_ASM(4,2));
+            System.Console.WriteLine("////////////////////////////");
+            System.Console.WriteLine(A5643756387_ASM(_Student.Summ(), _Student.LabS.Count()));
             System.Console.ReadLine();
         }
     }
