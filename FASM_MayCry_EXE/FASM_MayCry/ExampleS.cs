@@ -57,7 +57,8 @@ ret
             Console.WriteLine($"Example1 return value: {returnValue.ToInt32()}, expected: {1}"); // Prints 1
         }
         [System.Security.SuppressUnmanagedCodeSecurityAttribute] // disable security checks for better performance
-        [System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute(System.Runtime.InteropServices.CallingConvention.Cdecl)] // cdecl - let caller (.NET CLR) clean the stack
+        [System.Runtime.InteropServices
+            .UnmanagedFunctionPointerAttribute(System.Runtime.InteropServices.CallingConvention.Cdecl)] // cdecl - let caller (.NET CLR) clean the stack
         private delegate int AssemblyAddFunction(int x, int y);
         /// <summary>
         ///Example 3: Add Function With Parameters

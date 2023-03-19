@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 ///////////////////////////////////////////////////////////////
 using Binarysharp.Assemblers.Fasm;
 using Process.NET;
@@ -21,17 +22,19 @@ namespace ConsoleApp1
         /////////////////////////
         public Student() { }
         private static Random __rand = new Random();
-        public Student(System.String _Name) 
+        public Student(System.String _Name)
         {
             this.Name = _Name;
             int e = __rand.Next(1, 11);
-            for (int i = 0; i < e; i++)this.LabS.Add(__rand.Next(2, 6));
+            for (int i = 0; i < e; i++) this.LabS.Add(__rand.Next(2, 6));
         }
         public Student(System.String _Name, params System.Int32[] _LabS)
         {
             this.Name = _Name;
             this.LabS = _LabS.ToList();
-        }
+        }  
+
+
         /////////////////////////
         public Student Set(
             Student _this=null
@@ -71,7 +74,7 @@ namespace ConsoleApp1
                 _FasmNet.AddLine("xor ebx, ebx");
                 _FasmNet.AddLine("xor ecx, ecx");
                 _FasmNet.AddLine("mov ebx, dword [ebp+12]");//Указатель на первый элнемент массива
-                _FasmNet.AddLine("metka_ForStart:");                
+                _FasmNet.AddLine("metka_ForStart:");
                 _FasmNet.AddLine("add eax, dword [ebx]");//Указатель на первый элнемент массива
                 _FasmNet.AddLine("add ebx, 4");//Указатель на первый элнемент массива
                 _FasmNet.AddLine("add ecx, 1");//Указатель на первый элнемент массива
@@ -92,7 +95,8 @@ namespace ConsoleApp1
                 );
                 _IAllocatedMemory.Write(0, _ByteS);
 
-                delSumm_For_Assembly _delSumm_For_Assembly = Marshal.GetDelegateForFunctionPointer<delSumm_For_Assembly>(_IAllocatedMemory.BaseAddress);
+                delSumm_For_Assembly _delSumm_For_Assembly = Marshal
+                    .GetDelegateForFunctionPointer<delSumm_For_Assembly>(_IAllocatedMemory.BaseAddress);
                 
                 a= _delSumm_For_Assembly(this.LabS.Count, this.LabS.ToArray());
                 
@@ -102,9 +106,15 @@ namespace ConsoleApp1
             }
             return a;
         }
+        
+        
         [System.Security.SuppressUnmanagedCodeSecurityAttribute]
-        [System.Runtime.InteropServices.UnmanagedFunctionPointerAttribute(System.Runtime.InteropServices.CallingConvention.Cdecl)]
+        [System.Runtime.InteropServices
+            .UnmanagedFunctionPointerAttribute(System.Runtime.InteropServices.CallingConvention.Cdecl)]
         public delegate int delSumm_For_Assembly( int _count, params int[] _ints);
+
+
+
         public int Summ( int _count, params int[] _ints)
         {
             ;
